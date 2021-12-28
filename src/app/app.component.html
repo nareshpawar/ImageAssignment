@@ -5,66 +5,20 @@
     </h1>
   </div>
 
-    <div class="row mt-5">
-      
-      <div class="col-md-4" >
-        <div class="row">
-          <div class="col-md-12" >
-          <img  src="..\assets\images\ethan-robertson-SYx3UCHZJlo-unsplash.jpg" alt="Italian Trulli" 
-                style="width:350px;height:300px;"  
-                (click)=addImage(1)>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="row">
-          <div class="col-md-12" >
-             <img  src="..\assets\images\minimalist-desktop-5.jpg" style="width:350px;height:300px;" alt="Italian Trulli" (click)=addImage(2)>
+    <div class="row mt-5 imgdiv" *ngFor="let image of firstRowImageArray ">
+      <div class=" mt-2 mb-2" *ngFor="let img of image;let i=index" >
+        <div class="row ml-2" >
+          <div class="col-md-12"  >
+             <img class="img1" *ngIf="!img.imageFlag"  src='{{img.image}}' (click)=addImage(img.image,i) >
+          
+
           </div>
       </div>
-      </div>
-      <div class="col-md-4">
-        <div class="row">        
-          <div class="col-md-12" >
-            <img src="..\assets\images\minimalist-desktop-10.jpg" style="width:350px;height:300px;" alt="Italian Trulli" (click)=addImage(3)>
-          </div>
-            </div>
+      <div class="col-md-12"  >
+        
+        <img class="img2" *ngIf="img.imageFlag" src='{{img.image}}'  >
       </div>
     </div>
-    <div class="row mb-5">
-            <img class="col-md-12 mt-5 px-0"*ngIf="firstRowFirstImage == true" src="..\assets\images\ethan-robertson-SYx3UCHZJlo-unsplash.jpg" alt="Italian Trulli" style=" display:block; width:100%;">
-            <img class="col-md-12 mt-5 px-0"*ngIf="firstRowSecondImage == true"  src="..\assets\images\minimalist-desktop-5.jpg" alt="Italian Trulli" style=" display:block; width:100%;">
-            <img class="col-md-12 mt-5 px-0"*ngIf="firstRowThirdImage == true" src="..\assets\images\minimalist-desktop-10.jpg" alt="Italian Trulli" style=" display:block; width:100%;">
     </div>
-    <div class="row mt-5">
-      
-      <div class="col-md-4" >
-        <div class="row">
-          <div class="col-md-12" >
-          <img  src="..\assets\images\joshua-sortino-xZqr8WtYEJ0-unsplash.jpg" alt="Italian Trulli" 
-                style="width:350px;height:300px;"  
-                (click)=addImage(4)>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="row">
-          <div class="col-md-12" >
-             <img  src="..\assets\images\4k-desktop-wallpaper.-2560×1440.jpg" style="width:350px;height:300px;" alt="Italian Trulli" (click)=addImage(5)>
-          </div>
-      </div>
-      </div>
-      <div class="col-md-4">
-        <div class="row">        
-          <div class="col-md-12" >
-            <img src="..\assets\images\1335039.webp" style="width:350px;height:300px;" alt="Italian Trulli" (click)=addImage(6)>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row mb-5">
-            <img class="col-md-12 mt-5 px-0"*ngIf="secondRowFirstImage == true" src="..\assets\images\joshua-sortino-xZqr8WtYEJ0-unsplash.jpg" alt="Italian Trulli" style=" display:block; width:100%;">
-            <img class="col-md-12 mt-5 px-0"*ngIf="secondRowsecondImage == true"  src="..\assets\images\4k-desktop-wallpaper.-2560×1440.jpg" alt="Italian Trulli" style=" display:block; width:100%;">
-            <img class="col-md-12 mt-5 px-0"*ngIf="secondRowThirdImage == true" src="..\assets\images\1335039.webp" alt="Italian Trulli" style=" display:block; width:100%;">
-    </div>
+    
 </div>
