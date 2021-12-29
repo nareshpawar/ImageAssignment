@@ -25,6 +25,7 @@ imageCollection =[ {image : this.image1 , imageFlag : false},
                    {image : this.image6 , imageFlag : false}]
   firstRowImageArray=[this.imageCollection]
            
+   length = this.imageCollection.length
   
   addImage(value:any,index:number){
 
@@ -36,29 +37,27 @@ imageCollection =[ {image : this.image1 , imageFlag : false},
   // });
   if(index == this.imageCollection.length-1 || index == this.imageCollection.length-2 || index == this.imageCollection.length-3 ||
     index == this.imageCollection.length-4){
-      this.imageCollection.push({image : value , imageFlag : true,})
+      this.imageCollection.splice(this.length,0,{image : value , imageFlag : true,})
     }else
   if(index != this.imageCollection.length-1 ){
 
     for(let i = 3 ; i <= this.imageCollection.length; i+=3){
-      // console.log(i);
     
     if(index < i){
       let arrayIndex = i - index;
-      index += arrayIndex;
+      let finalIndex = index + arrayIndex;
       console.log(index);
-      this.imageCollection.splice(index,0,{image : value , imageFlag : true,})
+      this.imageCollection.splice(finalIndex,0,{image : value , imageFlag : true,})
       break;
     }
     else 
     if( i+3 > this.imageCollection.length) {
-        // console.log(this.imageCollection.length);
-        this.imageCollection.splice(this.imageCollection.length,0,{image : value , imageFlag : true,})
+        this.imageCollection.splice(this.length,0,{image : value , imageFlag : true,})
         break;
     }
   }
     }else{
-      this.imageCollection.push({image : value , imageFlag : true,})
+      this.imageCollection.splice(this.length,0,{image : value , imageFlag : true,})
     }
 console.log(this.imageCollection);
 
