@@ -4,21 +4,16 @@
     <h1>Images
     </h1>
   </div>
-
     <div class="row mt-5 imgdiv" *ngFor="let image of firstRowImageArray ">
       <div class=" mt-2 mb-2" *ngFor="let img of image;let i=index" >
         <div class="row ml-2" >
           <div class="col-md-12"  >
-             <img class="img1" *ngIf="!img.imageFlag"  src='{{img.image}}' (click)=addImage(img.image,i) >
-          
-
+             <img class="img1" *ngIf="!img.imageFlag"  src='{{img.image}}' (click)=showImage(img.image,i) >
           </div>
       </div>
       <div class="col-md-12"  >
-        
         <img class="img2" *ngIf="img.imageFlag" src='{{img.image}}'  >
       </div>
     </div>
     </div>
-    
 </div>
