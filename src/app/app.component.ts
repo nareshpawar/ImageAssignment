@@ -19,9 +19,6 @@ export class AppComponent {
   { image: this.image4, imageFlag: false },
   { image: this.image5, imageFlag: false },
   { image: this.image6, imageFlag: false },
-  { image: this.image1, imageFlag: false },
-  { image: this.image2, imageFlag: false },
-  { image: this.image3, imageFlag: false },
   ]
   firstRowImageArray = [this.imageCollection]
   length = this.imageCollection.length
@@ -29,7 +26,6 @@ export class AppComponent {
     for (let i = 0; i < this.imageCollection.length; i++) {
       if (this.imageCollection[i].imageFlag === true) {
         this.imageCollection.splice(i, 1);
-        
       }
     }
       if (index != this.imageCollection.length - 1) {
