@@ -1,3 +1,4 @@
+import { splitClasses } from '@angular/compiler';
 import { Component } from '@angular/core';
 
 @Component({
@@ -20,23 +21,21 @@ export class AppComponent {
 imageCollection =[ {image : this.image1 , imageFlag : false},
                    {image : this.image2 , imageFlag : false},
                    {image : this.image3 , imageFlag : false},
-                   {image : this.image4 , imageFlag : false},
-                   {image : this.image5 , imageFlag : false},
-                   {image : this.image6 , imageFlag : false}]
+                   {image : this.image4 , imageFlag : false},{image : this.image5 , imageFlag : false},{image : this.image6 , imageFlag : false}
+                  ]
   firstRowImageArray=[this.imageCollection]
            
    length = this.imageCollection.length
   
   addImage(value:any,index:number){
+    for(let i = 0 ; i < this.imageCollection.length; i++){
+      console.log(this.imageCollection[i]);
+      
+      if(this.imageCollection[i].imageFlag === true){
+        this.imageCollection.splice(i,1)  }
+    }
 
-  // this.imageCollection.forEach((element,i) => {
-  //   if(value == element.image){
-  //     if(index)
-
-  //   }
-  // });
-  if(index == this.imageCollection.length-1 || index == this.imageCollection.length-2 || index == this.imageCollection.length-3 ||
-    index == this.imageCollection.length-4){
+  if(index == this.imageCollection.length-1 || index == this.imageCollection.length-2 || index == this.imageCollection.length-3){
       this.imageCollection.splice(this.length,0,{image : value , imageFlag : true,})
     }else
   if(index != this.imageCollection.length-1 ){
@@ -46,7 +45,6 @@ imageCollection =[ {image : this.image1 , imageFlag : false},
     if(index < i){
       let arrayIndex = i - index;
       let finalIndex = index + arrayIndex;
-      console.log(index);
       this.imageCollection.splice(finalIndex,0,{image : value , imageFlag : true,})
       break;
     }
