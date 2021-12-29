@@ -31,7 +31,7 @@ imageCollection =[ {image : this.image1 , imageFlag : false},
     for(let i = 0 ; i < this.imageCollection.length; i++){
       console.log(this.imageCollection[i]);
       
-      if(this.imageCollection[i].imageFlag === true){
+      if(this.imageCollection[i].imageFlag === true){ 
         this.imageCollection.splice(i,1)  }
     }
 
